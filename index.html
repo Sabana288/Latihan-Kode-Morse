@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Kode Morse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header>
+            <div class="logo">M</div>
+            <span>LATIHAN INTERAKTIF</span>
+        </header>
+
+        <section id="menu">
+            <p class="label">BELAJAR SANDI MORSE</p>
+            <h1>LATIHAN KODE MORSE</h1>
+            <p class="subtitle">Asah kemampuanmu mengenali 26 huruf dalam sandi Morse.</p>
+
+            <div class="menu-grid">
+                <button class="mode-card" onclick="mulai('huruf')">
+                    <span class="nomor">01</span>
+                    <strong>Jawab Huruf</strong>
+                    <small>Lihat kode Morse, tulis hurufnya.</small>
+                    <span class="panah">→</span>
+                </button>
+
+                <button class="mode-card" onclick="mulai('kode')">
+                    <span class="nomor">02</span>
+                    <strong>Jawab Kode</strong>
+                    <small>Lihat huruf, tulis kode Morsenya.</small>
+                    <span class="panah">→</span>
+                </button>
+
+                <button class="mode-card gabungan" onclick="mulai('gabungan')">
+                    <span class="nomor">03</span>
+                    <strong>Gabungan</strong>
+                    <small>Latihan huruf dan kode secara acak.</small>
+                    <span class="panah">→</span>
+                </button>
+            </div>
+            <p class="catatan">26 HURUF &nbsp; • &nbsp; URUTAN ACAK &nbsp; • &nbsp; BISA DIULANGI</p>
+        </section>
+
+        <section id="latihan" hidden>
+            <div class="quiz-header">
+                <button class="back" onclick="kembali()">← Menu</button>
+                <span id="modeLabel" class="badge">JAWAB HURUF</span>
+            </div>
+
+            <div class="progress-info">
+                <span id="progres">SOAL 1 / 26</span>
+                <span id="skor">SKOR 0</span>
+            </div>
+            <div class="progress-track"><div id="progressBar"></div></div>
+
+            <div class="question-card">
+                <p id="petunjuk" class="label">TERJEMAHKAN KODE INI</p>
+                <h2 id="pertanyaan">· −</h2>
+                <p id="arahan" class="subtitle">Ketik jawabanmu di bawah ini.</p>
+
+                <form id="formJawaban">
+                    <input id="jawaban" type="text" placeholder="Ketik jawaban..." autocomplete="off" required>
+                    <button type="submit" id="tombolJawab">Jawab</button>
+                </form>
+
+                <p id="hasil" role="status" aria-live="polite"></p>
+                <button id="lanjut" class="lanjut" onclick="berikutnya()" hidden>
+                    Soal Berikutnya →
+                </button>
+            </div>
+            <p class="catatan">Setiap huruf muncul satu kali dalam satu putaran.</p>
+        </section>
+
+        <section id="selesai" hidden>
+            <div class="finish-icon">✓</div>
+            <p class="label">PUTARAN SELESAI</p>
+            <h1>Hebat! Kamu<br><span>menyelesaikannya.</span></h1>
+            <div class="score-card">
+                <p>SKOR AKHIR</p>
+                <h2 id="nilai">0 / 26</h2>
+                <div class="progress-track"><div id="hasilBar"></div></div>
+                <p id="pesanAkhir"></p>
+            </div>
+            <div id="ringkasanJawaban" class="ringkasan-jawaban">
+    <div class="jumlah-benar">Benar = <span id="jumlahBenar">0</span></div>
+    <div class="jumlah-salah">Salah = <span id="jumlahSalah">0</span></div>
+</div>
+<button class="ulang" onclick="mulai(mode)">ULANGI</button>
+            <button class="menu-utama" onclick="kembali()">Kembali ke Pilihan</button>
+        </section>
+
+        
+        <footer>LATIHAN KODE MORSE <span>· − · · &nbsp; − − ·</span></footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
